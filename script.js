@@ -1,18 +1,40 @@
 
 function getComputerChoice() {
-    let choiceNumber = Math.floor(Math.random()*3)+1;
+    let choiceNumber = Math.floor(Math.random() * 3) + 1;
 
-    switch(choiceNumber){
+    switch (choiceNumber) {
         case 1:
-            return "Rock";
-        
+            return "rock";
+
         case 2:
-            return "Paper";
+            return "paper";
 
         case 3:
-            return "Scissors";
-        
+            return "scissors";
+
         default:
-            return "Rock";
+            return "rock";
+    }
+}
+
+
+
+function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection.toLowerCase();
+    if (playerSelection === computerSelection) {
+        return "Tie!";
+    } else if ((playerSelection === "rock" && computerSelection === "scissors")
+            || (playerSelection === "scissors" && computerSelection === "paper")
+            || (playerSelection === "paper" && computerSelection === "rock")) {
+
+        return `You Win! ${playerSelection} beats ${computerSelection}`;
+
+    } else if ((playerSelection === "rock" && computerSelection === "paper")
+            || (playerSelection === "scissors" && computerSelection === "rock")
+            || (playerSelection === "paper" && computerSelection === "scissors")) {
+
+        return `You Lose! ${playerSelection} loses to ${computerSelection}`;
+    } else {
+        return "Oops! Something went wrong!"
     }
 }
