@@ -113,7 +113,9 @@ pGameResult.classList = "game-result";
 const btnResetGame = document.createElement("button");
 btnResetGame.classList = "reset-btn";
 btnResetGame.textContent = "Play again?";
-btnResetGame.addEventListener("click", resetGame());
+btnResetGame.addEventListener("click", () => {
+    resetGame()
+});
 
 function endGame(playerWins, computerWins) {
     if(playerWins == 5 || computerWins == 5) {
@@ -134,6 +136,18 @@ function endGame(playerWins, computerWins) {
 
 
 function resetGame() {
+    playerWins = 0;
+    computerWins = 0;
 
+    pPlayerPoints.textContent = 0;
+    pComputerPoints.textContent = 0;
+
+    pGameResult.textContent = "";
+    divGame.removeChild(pGameResult);
+    divGame.removeChild(btnResetGame);
+
+    choicesBtn.forEach(btn => {
+        btn.disabled = false;
+    })
 }
 
