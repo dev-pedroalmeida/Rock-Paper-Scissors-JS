@@ -9,7 +9,7 @@ let playerWins = 0;
 let computerWins = 0;
 
 choicesBtn.forEach(btn => btn.addEventListener("click", () => {
-    game(btn.id);
+    playGame(btn.id);
 }));
 
 
@@ -62,7 +62,7 @@ function getRoundResult(playerSelection, computerSelection) {
 
 
 
-function game(playerChoice) {
+function playGame(playerChoice) {
 
     let computerChoice = getComputerChoice();
 
@@ -99,9 +99,41 @@ function game(playerChoice) {
             break;
 
     }
+
+    endGame(playerWins, computerWins);
 }
 
 
 
+const divGame = document.querySelector(".game");
 
+const pGameResult = document.createElement("p");
+pGameResult.classList = "game-result";
+
+const btnResetGame = document.createElement("button");
+btnResetGame.classList = "reset-btn";
+btnResetGame.textContent = "Play again?";
+btnResetGame.addEventListener("click", resetGame());
+
+function endGame(playerWins, computerWins) {
+    if(playerWins == 5 || computerWins == 5) {
+        if(playerWins > computerWins) {
+            pGameResult.textContent = "Congratulations! You won against the machine!";
+            divGame.appendChild(pGameResult);
+            divGame.appendChild(btnResetGame);
+        } else {
+            pGameResult.textContent = "OH NOOOOO! You died!";
+            divGame.appendChild(pGameResult);
+            divGame.appendChild(btnResetGame);
+        }
+        choicesBtn.forEach(btn => {
+            btn.disabled = true;
+        })
+    }
+}
+
+
+function resetGame() {
+
+}
 
