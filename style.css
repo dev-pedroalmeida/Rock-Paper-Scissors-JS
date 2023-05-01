@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0b0c10;
+    color: #f0f0f0;
+
+    font-family:  Verdana, sans-serif;
+}
+
+.game-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.6em;
+
+}
+
+.title {
+    color: #66fcf1;
+    font-size: 3.3em;
+    margin-bottom: 22px;
+}
+
+.content {
+    width: 600px;
+    max-height: 500px;
+    background: linear-gradient(90deg, rgba(11,12,16,1) 12%, rgba(18,19,26,1) 100%);
+    border: 2px solid #66fcf1;
+    margin-top: 32px;
+    padding: 22px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card {
+    margin: 36px;
+}
+
+.scoreboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 26px;
+}
+
+.player-score, .computer-score {
+    display: flex;
+    gap: 12px;
+}
+
+.score-points {
+    color: #66fcf1;
+    font-size: 36px;
+}
+
+.choice-btn {
+    width: 127px;
+    height: 127px;
+    outline-color: transparent;
+    border: 8px solid #505052;
+    border-radius: 36px;
+    cursor: pointer;
+    background-color: #d9dbdf;
+    transition: all 0.2s;
+}
+
+.choice-btn:hover {
+    background-color: #66fcf1;
+    transform: scale(1.02);
+}
+
+.choice-btn#rock {
+    background-image: url(img/rock.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.choice-btn#paper {
+    background-image: url(img/paper.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.choice-btn#scissors {
+    background-image: url(img/scissors.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.round {
+    margin: 12px;
+    font-size: 20px;
+}
+
+.game {
+    margin: 32px 0;
+}
+
+.game-result {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 32px;
+}
+
+.reset-btn {
+    padding: 18px;
+    border: 1px solid #66fcf1;
+    background-color: transparent;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.reset-btn:hover {
+    background-color: #66fcf1;
+    color: black;
+}

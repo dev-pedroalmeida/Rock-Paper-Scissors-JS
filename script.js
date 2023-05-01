@@ -70,12 +70,10 @@ function playGame(playerChoice) {
 
     switch (roundResult) {
         case 0:
-            console.log("Tie!");
             pRoundResult.textContent = "Tie!";
             break;
 
         case 1:
-            console.log(`You win! ${playerChoice} beats ${computerChoice}`);
             pRoundResult.textContent = `You win! ${playerChoice} beats ${computerChoice}`;
             
             playerWins++;
@@ -84,7 +82,6 @@ function playGame(playerChoice) {
             break;
 
         case 2:
-            console.log(`You lose! ${playerChoice} loses to ${computerChoice}`);
             pRoundResult.textContent = `You lose! ${playerChoice} loses to ${computerChoice}`;
             
             computerWins++;
@@ -141,6 +138,7 @@ function resetGame() {
 
     pPlayerPoints.textContent = 0;
     pComputerPoints.textContent = 0;
+    pRoundResult.textContent = "";
 
     pGameResult.textContent = "";
     divGame.removeChild(pGameResult);
